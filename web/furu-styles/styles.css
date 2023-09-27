@@ -1,0 +1,84 @@
+
+   #grad {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+   }
+   #grad div {
+    padding: 20px;
+   }
+   #prol {
+        line-height: 3;
+    text-align: left;
+    position:relative; left:-20px;
+  }
+   body{
+    margin: 0px;
+   }   
+   p, ul{
+    font-size: larger;
+   }
+
+   h2{
+    font-size: xx-large;
+   }
+   a {
+      text-decoration: none;
+      color: rgb(90, 90, 90); 
+    }
+    h1 {
+      font-size: 45px;
+      text-align: right;
+      padding: 40px;
+      margin: 0px;
+     }
+     ol{
+      width: 100px;
+      margin: 0px;
+      padding: 50px;
+      text-align: center;
+      line-height: 2;
+      font-size: large;
+    }
+    .ablity, .stat{
+      font-weight: bold;
+    }
+    .akina{
+     
+      text-decoration-thickness: 1px;
+      color: rgb(250, 101, 56);
+      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    }
+
+    .akina2{
+      color: rgb(0, 0, 0);
+      text-shadow: -1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e;
+    }
+   .akina3{
+    text-shadow: -1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e;
+   }
+
+   .kanae_w{
+     color: white;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   }
+   .kanae_r {
+     color: red;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   }
+   .kanae_g {
+     color: green;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   }
+   .kanae_p {
+     color: purple;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   }
+   .kanae_y {
+     color: yellow;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   }
+   .kanae_e {
+     color: gray;
+     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+   }
+    
