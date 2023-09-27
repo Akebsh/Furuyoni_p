@@ -1,20 +1,18 @@
 
- @media (max-width: 600px) {
-      #grad div {
-        padding: 20px;
-        padding-left: 70px;
+  @media(max-width:600px){
+       #grad{
+        display: block;
+       }
+       ol{
+        border-right:none;
+       }
       
-     }
-
-     ol{
-      width: 50px;
-      margin: 0px;
-      padding: 50px;
-      text-align: center;
-      line-height: 2;
-      font-size: large;
+       #grad div {
+        padding: 10px;
+        padding-left: 70px;
+        
+       }
     }
-  }
 
    #grad {
     display: grid;
