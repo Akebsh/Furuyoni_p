@@ -5,6 +5,10 @@
        }
        ol{
         border-right:none;
+         font-size: large;
+          text-align: left;
+          padding: 0px;
+          width: 50px;
        }
       
        #grad div {
