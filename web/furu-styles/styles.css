@@ -30,7 +30,7 @@
     margin: 0px;
    }   
    p, ul{
-    font-size: largest;
+    font-size: larger;
    }
 
    h2{
@@ -52,7 +52,7 @@
       padding: 50px;
       text-align: center;
       line-height: 2;
-      font-size: large;
+      font-size: larger;
     }
     .ablity, .stat{
       font-weight: bold;
