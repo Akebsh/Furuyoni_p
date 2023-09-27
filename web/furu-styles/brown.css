@@ -4,3 +4,9 @@ h1 {
    ol{
     border-right:2px solid brown;
   }
+@media(max-width:600px){
+   
+    ol{
+     border-right:none;
+    }
+ }
