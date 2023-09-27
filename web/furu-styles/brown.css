@@ -11,12 +11,12 @@ h1 {
      font-size: large;
      text-align: left;
      padding: 10px;
-     width: 70px;
+     width: 100px;
     }
 
     #grad div {
     padding: 10px;
-    padding-left: 50px;
+    padding-left: -10px;
     
    }
     
