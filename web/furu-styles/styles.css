@@ -97,5 +97,24 @@
  div.icon{
    padding-top: 20px;
    }
+
+@media(max-width:600px){
+   
+    ol{
+     border-right:none; 
+     font-size: large;
+     text-align: left;
+     padding: 10px;
+     width: 120px;
+    }
+
+    #grad div {
+    padding: 10px;
+    padding-left: -40px;
+    
+   }
+    
+ }
+
  
     
