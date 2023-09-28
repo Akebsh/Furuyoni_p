@@ -99,22 +99,16 @@
    }
 
 @media(max-width:600px){
-   
-    ol{
+       #grad{
+        display: block;
+       }
+      ol{
      border-right:none; 
      font-size: large;
      text-align: left;
      padding: 10px;
-     width: 120px;
+     width: 90px;
     }
-
-    #grad div {
-    padding: 10px;
-    padding-left: -40px;
-    
-   }
-    
- }
 
  
     
