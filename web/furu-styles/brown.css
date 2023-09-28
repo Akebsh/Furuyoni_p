@@ -10,8 +10,8 @@ h1 {
        }
       ol{
      border-right:none; 
-     font-size: large;
-     text-align: left;
+     font-size: largest;
+     text-align: center;
      padding: 10px;
      width: 90px;
     }
