@@ -7,8 +7,8 @@
    }
    #grad div {
     padding: 20px;
-    padding-top: 70px;
-    padding-left: 70px;
+    padding-top: 80px;
+    padding-left: 100px;
    }
    #prol {
         line-height: 3;
@@ -122,17 +122,6 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
    padding-left: 10px;
    }
 
-@media(max-width:600px){
-       #grad{
-        display: block;
-       }
-      ol{
-     border-right:none; 
-     font-size: larger;
-     padding: 10px;
-    }
-}
-
 @media(max-width:850px){
      
      div#status{
@@ -142,9 +131,10 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     padding: 20px;
     padding-top: 30px;
     padding-left: 0px;
+    font-size: larger;
    }
     ol{
-    width: 70px;
+    width: 50px;
     }
 }
     
