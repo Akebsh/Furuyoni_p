@@ -4,14 +4,4 @@ h1 {
    ol{
     border-right:2px solid brown;
   }
-@media(max-width:600px){
-       #grad{
-        display: block;
-       }
-      ol{
-     border-right:none; 
-     font-size: largest;
-     text-align: right;
-     padding: 0px;
-     width: 90px;
-    }
+
