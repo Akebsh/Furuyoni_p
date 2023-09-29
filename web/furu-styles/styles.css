@@ -125,8 +125,12 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 
 @media(max-width:850px){
      
-     div#status{
+    div#status{
     display: block;
+   }
+    div#icon{
+   padding-top: 0px;
+   padding-left: 10px;
    }
      #grad div {
     padding-top: 50px;
