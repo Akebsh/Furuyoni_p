@@ -42,6 +42,7 @@
       text-align: center;
       line-height: 2;
       font-size: larger;
+      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     }
     .ablity, .stat{
       font-weight: bold;
@@ -86,7 +87,7 @@
      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
    }
 
-   #status{
+ div#status{
     display: grid;
     grid-template-columns: 130px 1fr;
     padding-left: 10px;
