@@ -47,6 +47,10 @@
       font-size: larger;
       text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     }
+
+ li{
+    font-weight: bold;
+  }
     .ablity, .stat{
       font-weight: bold;
       text-shadow: -1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e;
