@@ -125,6 +125,14 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 
 @media(max-width:850px){
      
+    #grad div {
+    padding-top: 50px;
+    padding-left: 0px;
+   }
+    ol{
+    width: 70px;
+    padding-right: 30px;
+    }
     div#status{
     display: block;
    }
@@ -132,14 +140,5 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
    padding-top: 0px;
    padding-left: 10px;
    }
-     #grad div {
-    padding-top: 50px;
-    padding-left: 0px;
-    font-size: large;
-   }
-    ol{
-    width: 70px;
-    padding-right: 30px;
-    }
 }
     
