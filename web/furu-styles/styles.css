@@ -128,8 +128,8 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
        }
       ol{
      border-right:none; 
-     font-size: large;
-     text-align: left;
+     font-size: larger;
+     text-align: right;
      padding: 10px;
      width: 90px;
     }
