@@ -128,13 +128,13 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     display: block;
    }
      #grad div {
-    padding: 20px;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-left: 0px;
-    font-size: larger;
+    font-size: large;
    }
     ol{
-    width: 50px;
+    width: 70px;
+    padding-right: 30px;
     }
 }
     
