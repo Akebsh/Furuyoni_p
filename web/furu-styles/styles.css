@@ -129,6 +129,10 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
    padding-left: 10px;
    }
 
+tr th td{
+border: 2px solid black;
+  }
+
 @media(max-width:850px){
      
     #grad div {
