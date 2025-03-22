@@ -1,16 +1,28 @@
 
-
-    
    #grad {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 230px 1fr;
    }
-   #grad div {
-    padding: 20px;
-    padding-top: 80px;
-    padding-left: 100px;
-    font-size: largest;
+
+   #list{
+    padding-top: 0px;
+    padding-left: 50px; 
    }
+  
+   #main{
+    display: grid;
+    
+    
+    padding-left: 130px;
+    padding-top: 70px;
+   }
+
+   .status{
+    display: grid;
+    grid-template-columns: 130px 1fr;
+   }
+  
+   
    #prol {
         line-height: 3;
     text-align: left;
@@ -22,6 +34,7 @@
    p, ul{
     font-size: larger;
    }
+
 
    h2{
     font-size: xx-large;
@@ -36,24 +49,20 @@
       padding: 40px;
       margin: 0px;
      }
- 
      ol{
-      width: 100px;
+      width: 150px;
       margin: 0px;
-      padding: 50px;
-      padding-left: 70px;
+      padding-left: 50px;
+      padding-top: 30px;
+      padding-right: 0px;
       text-align: center;
-      line-height: 2;
-      font-size: larger;
-      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+      line-height: 2.5;
+      font-size: large;
+      text-shadow: -1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e;
     }
 
- li{
-    font-weight: bold;
-  }
     .ablity, .stat{
-      font-weight: bold;
-      text-shadow: -1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e;
+      font-weight: bold; 
     }
     .akina{
      
@@ -94,8 +103,7 @@
      color: gray;
      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
    }
-
-    .kururu1{
+   .kururu1{
 color: red;
 text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
@@ -118,46 +126,22 @@ text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 
 
 
- div#status{
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    padding-left: 10px;
-   }
-    
- div#icon{
+
+   div.icon{
    padding-top: 20px;
-   padding-left: 10px;
    }
-table{ 
-    border-collapse : collapse; 
-}
-tr, th, td{
-border: 2px solid black;
-  }
+    @media(max-width:600px){
+       #grad{
+        display: block;
+       }
+       ol{
+        border-right:none;
+       }
+      
+       #grad div {
+        padding: 10px;
+        padding-left: 70px;
+        
+       }
 
-td{
-padding: 10px;
-}
-
-
-@media(max-width:850px){
-     
-    #grad div {
-    padding-top: 50px;
-    padding-left: 0px;
-   }
-    ol{
-    width: 70px;
-    padding-right: 30px;
-    padding-left: 50px;
     }
-    div#status{
-    display: block;
-    padding-top: 10px;
-   }
-    div#icon{
-   padding-top: 0px;
-   padding-left: 10px;
-   }
-}
-    
