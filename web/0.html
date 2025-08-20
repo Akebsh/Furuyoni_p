@@ -1,19 +1,454 @@
-<!doctype html>
-
-<html>
+<!DOCTYPE html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.6" />
     <title>Furuyoni 여신 소개하다</title>
-    <meta charaset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.6">
-    <link rel="stylesheet" href="furu-styles/styles.css">
-    <link rel="stylesheet" href="furu-styles/black.css">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;400;500;700;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Noto Serif KR", "Noto Serif JP", serif;
+        line-height: 1.8;
+        color: #3d2914;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 182, 193, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 192, 203, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(255, 160, 180, 0.05) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            135deg,
+            #faf0e6 0%,
+            #f5deb3 20%,
+            #deb887 40%,
+            #d2b48c 60%,
+            #bc9a6a 80%,
+            #8b7355 100%
+          );
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+        padding: 20px;
+      }
+
+      /* 벚꽃 애니메이션 */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background-image: radial-gradient(
+            2px 2px at 20px 30px,
+            rgba(255, 182, 193, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 40px 70px,
+            rgba(255, 192, 203, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 90px 40px,
+            rgba(255, 160, 180, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 130px 80px,
+            rgba(255, 182, 193, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 160px 30px,
+            rgba(255, 192, 203, 0.4),
+            transparent
+          );
+        background-repeat: repeat;
+        background-size: 200px 100px;
+        animation: sakura-fall 20s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes sakura-fall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 900;
+        color: #8b4513;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3),
+          1px 1px 2px rgba(139, 69, 19, 0.5);
+        margin-bottom: 30px;
+        font-family: "Noto Serif JP", serif;
+        background: linear-gradient(
+            rgba(139, 69, 19, 0.1),
+            rgba(139, 69, 19, 0.05)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wood" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="%23deb887"/><path d="M0,0 L4,4 M4,0 L0,4" stroke="%23cd853f" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23wood)"/></svg>');
+        border: 3px solid #8b4513;
+        padding: 20px;
+        box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.2),
+          0 8px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      h1::before {
+        content: "🌸";
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+
+      h1::after {
+        content: "🌸";
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+
+      h1 a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      h1 a:hover {
+        color: #a0522d;
+      }
+
+      #grad {
+        background: linear-gradient(
+            rgba(250, 240, 230, 0.95),
+            rgba(245, 222, 179, 0.95)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="1" height="1"><rect width="1" height="1" fill="%23faf0e6"/></pattern></defs><rect width="40" height="40" fill="url(%23paper)"/><path d="M0,20 Q20,15 40,20 T80,20" stroke="rgba(139,69,19,0.1)" stroke-width="0.5" fill="none"/></svg>');
+        border: 3px solid #8b4513;
+        padding: 30px;
+        box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.1),
+          0 8px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      ol {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        list-style: none;
+        margin-bottom: 30px;
+        padding: 0;
+      }
+
+      ol a,
+      ol li a {
+        display: block;
+        padding: 10px 12px;
+        background: linear-gradient(to bottom, #f4e4bc, #e6d3a7, #d4c195);
+        color: #654321;
+        text-decoration: none;
+        border: 1px solid #8b7355;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        position: relative;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      ol a:hover,
+      ol li a:hover {
+        background: linear-gradient(to bottom, #f8e8c0, #ebd7ab, #d8c699);
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      ol a:active,
+      ol li a:active {
+        transform: translateY(1px);
+        box-shadow: inset 0 1px 3px rgba(139, 69, 19, 0.3),
+          0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      #prol {
+        background: linear-gradient(
+          to bottom,
+          #d4af37,
+          #b8941f,
+          #9d7e1a
+        ) !important;
+        color: #4a3728 !important;
+        font-weight: 700 !important;
+        border: 1px solid #8b4513 !important;
+      }
+
+      .intro-section {
+        background: linear-gradient(
+            145deg,
+            rgba(255, 248, 240, 0.9),
+            rgba(250, 240, 230, 0.9)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><rect width="30" height="30" fill="%23fff8f0"/><circle cx="15" cy="15" r="1" fill="rgba(139,69,19,0.1)"/></svg>');
+        border: 2px solid #8b7355;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: inset 0 0 10px rgba(139, 69, 19, 0.05),
+          0 6px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .intro-section::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #8b4513, #a0522d, #8b4513);
+        z-index: -1;
+      }
+
+      .intro-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+      }
+
+      .intro-section a {
+        color: #8b4513;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+
+      .intro-section a:hover {
+        color: #a0522d;
+      }
+
+      .stat-image {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .stat-image img {
+        max-width: 90%;
+        height: auto;
+        border: 3px solid #8b4513;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 248, 240, 0.8);
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #8b4513;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        font-family: "Noto Serif JP", serif;
+        margin: 30px 0 20px 0;
+        text-align: center;
+      }
+
+      .stat-description {
+        background: linear-gradient(
+            rgba(255, 248, 240, 0.7),
+            rgba(250, 235, 215, 0.7)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="60" height="60" fill="rgba(250,235,215,0.3)"/><path d="M0,30 Q30,25 60,30 T120,30" stroke="rgba(139,69,19,0.1)" stroke-width="0.3" fill="none"/></svg>');
+        padding: 20px;
+        border: 1px solid rgba(139, 115, 85, 0.4);
+        border-left: 4px solid #8b4513;
+        margin-bottom: 20px;
+        box-shadow: inset 2px 0 4px rgba(139, 69, 19, 0.1);
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      .stat {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #8b4513;
+        text-align: center;
+        margin: 25px 0 15px 0;
+        font-family: "Noto Serif JP", serif;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 228, 225, 0.8),
+          rgba(255, 218, 185, 0.8)
+        );
+        border: 2px solid #cd853f;
+        padding: 15px;
+        position: relative;
+      }
+
+      .stat::before {
+        content: "⚔️";
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 1.2rem;
+        opacity: 0.6;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: rgba(255, 248, 240, 0.9);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        border: 2px solid #8b4513;
+        padding: 12px 15px;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      th {
+        background: linear-gradient(to bottom, #d4af37, #b8941f);
+        color: #4a3728;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      td {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 248, 240, 0.9),
+          rgba(250, 240, 230, 0.9)
+        );
+        color: #3d2914;
+      }
+
+      tr:nth-child(even) td {
+        background: linear-gradient(
+          to bottom,
+          rgba(245, 222, 179, 0.6),
+          rgba(222, 184, 135, 0.6)
+        );
+      }
+
+      .stat-notes {
+        font-size: 1rem;
+        color: #654321;
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        background: rgba(255, 248, 240, 0.5);
+        border-left: 3px solid #cd853f;
+      }
+
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 2rem;
+          padding: 15px;
+        }
+
+        ol {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 5px;
+        }
+
+        ol a,
+        ol li a {
+          padding: 8px 10px;
+          font-size: 0.8rem;
+        }
+
+        table,
+        th,
+        td {
+          font-size: 0.9rem;
+          padding: 8px 10px;
+        }
+
+        .stat {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* 서서히 나타나는 애니메이션 */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .intro-section,
+      .stat-image,
+      h2,
+      .stat,
+      table {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .intro-section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .stat-image {
+        animation-delay: 0.2s;
+      }
+      h2 {
+        animation-delay: 0.3s;
+      }
+      .stat:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+      .stat:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+    </style>
   </head>
   <body>
-    <h1><a href="main.html">Furuyoni 여신 소개하다</a></h1>
-    
-    <div id="grad"> 
+    <div class="container">
+      <h1><a href="main.html">Furuyoni 여신 소개하다</a></h1>
+
+      <div id="grad">
         <ol>
-          <a id="prol" href="0.html">0</a>
+          <a id="prol" href="0.html">서문</a>
           <li><a href="1.html"> 유리나</a></li>
           <li><a href="2.html"> 사이네</a></li>
           <li><a href="3.html"> 히미카</a></li>
@@ -39,149 +474,159 @@
           <li><a href="23.html"> 아키나</a></li>
           <li><a href="24.html"> 시스이</a></li>
           <li><a href="25.html"> 미소라</a></li>
+          <li><a href="26.html"> 이니르</a></li>
         </ol>
-    <div>
-        
-        <p><br>안녕하세요 <a title="검열된">어머밥 뉴비님들.
-        <br><br>다양한 furuyoni의 여신들과 고유명사로 개 지랄이 나 있는 그 기믹들, 뉴비들을 위해서 
-          아주 간단히, 소개하려고 해요. 
-        <br><br>정당한 지적, 당연하게도 환영합니다. 
-        <br><br>그러나 알 것 다 아는 사람들, 어서 여기서 나가 
-        exhaustive resistance 열상화 {2/3} life 로 받는 것 추천해요.<br></p>
-        <br><br>
-        <p>Thank you.</p>
-        <br><br><br><br><br><br><br><br>
-        
 
-       <img src="furu-img/abc.png" alt="stat"
-        width="90%"
-         />
-      
-        <p>
-        <h2>스탯에 대하여...</h2>
-        <p>스탯은 어떤 여신이 어느 정도의 능력을 갖고 있는가, 단순히 감을 잡는 정도의 용도인 랭크입니다.<br> 여기에서는 메타에 따른 강함 보다는 절대적인 기준을 생각합니다.<br><br> 특정 여신의 랭크에 반론이 있다면 문의해주시길 바랍니다.</p> 
-
-         <div class="stat">파괴력</div><br>
-
-         <table border = "1">
-    <tr>
-      <th scope="col">A</td>
-      <th scope="col">B</td>
-      <th scope="col">C</td>
-      <th scope="col">D</td>
-      <th scope="col">E</td>
-    </tr>
-    <tr>
-      <td>카무이에게 쫄지 않는다</td>
-      <td>밸류는 살짝 떨어지지만 무시못할 폭발력이 있다</td>
-      <td>평범한 수준</td>
-      <td>싸움에는 별로 재능이 없다</td>
-      <td>애초에 때릴 생각이 없다</td>
-    </tr>
-  </table>
-
-         <div class="stat">스피드</div><br>
-
-      -공격패의 매수가 많은 것도 반영.<br>
-      -전진 뿐 아니라 후퇴를 잘 하는 것도 스피드가 빠른 것으로 취급.<br><br>
-
-         <table border = "1">
-    <tr>
-      <th scope="col">A</td>
-      <th scope="col">B</td>
-      <th scope="col">C</td>
-      <th scope="col">D</td>
-      <th scope="col">E</td>
-    </tr>
-    <tr>
-      <td>프로 러닝백 수준, 혹은 공격과 달리기를 같이 할 정도</td>
-      <td>레인지 락 전략이 통하지 않는 정도</td>
-      <td>걷는 것 보다는 빠르다</td>
-      <td>걸어 다닌다</td>
-      <td>히미카를 보자마자 서렌을 친다 (근접의 경우)</td>
-    </tr>
-  </table>
-
-         <div class="stat">지속력</div><br>
-         <table border = "1">
-    <tr>
-      <th scope="col">A</td>
-      <th scope="col">B</td>
-      <th scope="col">C</td>
-      <th scope="col">D</td>
-      <th scope="col">E</td>
-    </tr>
-    <tr>
-      <td>드러눕는 것만은 자신이 있다</td>
-      <td>강력한 방어카드를 적어도 1장은 보유하거나, 기믹 상 버티기 용이하다</td>
-      <td>그럭저럭... 하면 하지</td>
-      <td>2순 끝쯤 부터는 손이 떨린다</td>
-      <td>금기 게이지가 있다</td>
-    </tr>
-  </table>
-
-         <div class="stat">정밀조작성</div><br>
-
-      -기본적으로는 난이도의 개념. 하지만 랭크가 높을수록 상대의 자원을 빼앗거나 특수 승리 등 특이한 능력이 많다.<br><br> 
-      
-      <table border = "1">
-    <tr>
-      <th scope="col">A</td>
-      <th scope="col">B</td>
-      <th scope="col">C</td>
-      <th scope="col">D</td>
-      <th scope="col">E</td>
-    </tr>
-    <tr>
-      <td>매우 정밀한 조작을 요구한다.</td>
-      <td>상당히 정밀한 조작이 필요하다</td>
-      <td>평범한 정도</td>
-      <td>적당히만 해도 이길 만 하다</td>
-      <td>대충 손에 있는 걸 던지다보면 게임을 이긴다</td>
-    </tr>
-  </table>
-         
-         <div class="stat">사정거리</div><br>
-
-         -사정거리 (여기에서는 주로 간격을 일컫는다.)<br><br>
-
-         <table border = "1">
-    <tr>
-      <th scope="col">A</td>
-      <th scope="col">B</td>
-      <th scope="col">C</td>
-      <th scope="col">D</td>
-      <th scope="col">E</td>
-    </tr>
-    <tr>
-      <td>여기 부터는 사실상 「거리」의 의미는 없다</td>
-      <td>6~10미터 정도의 원거리</td>
-      <td>4~6미터 정도의 중거리</td>
-      <td>2~4미터 정도의 근거리</td>
-      <td>0~2미터 정도의 클린치</td>
-    </tr>
-  </table>
-
-         <div class="stat">성장성</div><br>
-
-         <table border = "1">
-    <tr>
-      <th scope="col">A</td>
-      <th scope="col">B</td>
-      <th scope="col">C</td>
-      <th scope="col">D</td>
-      <th scope="col">E</td>
-    </tr>
-    <tr>
-      <td>게임 도중에 자꾸 카드가 바뀐다</td>
-      <td>가끔 카드가 바뀔 때가 있다</td>
-      <td>이상한 추가패나 판떼기가 있다</td>
-      <td>평범하다</td>
-      <td>거의 바뀌지 않는다</td>
-    </tr>
-  </table><br><br><br><br><br>
-        </p>
+        <div class="intro-section">
+          <p>
+            <br />안녕하세요 <a title="검열된">어머밥 뉴비님들.</a>
+            <br /><br />다양한 furuyoni의 여신들과 고유명사로 개 지랄이 나 있는
+            그 기믹들, 뉴비들을 위해서 아주 간단히, 소개하려고 해요.
+            <br /><br />정당한 지적, 당연하게도 환영합니다. <br /><br />그러나
+            알 것 다 아는 사람들, 어서 여기서 나가 exhaustive resistance 열상화
+            {2/3} life 로 받는 것 추천해요.<br />
+          </p>
+          <br /><br />
+          <p>Thank you.</p>
+          <br /><br /><br /><br /><br /><br /><br /><br />
         </div>
+
+        <div class="stat-image">
+          <img src="furu-img/abc.png" alt="stat" />
+        </div>
+
+        <h2>스탯에 대하여...</h2>
+
+        <div class="stat-description">
+          <p>
+            스탯은 어떤 여신이 어느 정도의 능력을 갖고 있는가, 단순히 감을 잡는
+            정도의 용도인 랭크입니다.<br />
+            여기에서는 메타에 따른 강함 보다는 절대적인 기준을 생각합니다.<br /><br />
+            특정 여신의 랭크에 반론이 있다면 문의해주시길 바랍니다.
+          </p>
+        </div>
+
+        <div class="stat">파괴력</div>
+        <table border="1">
+          <tr>
+            <th scope="col">A</th>
+            <th scope="col">B</th>
+            <th scope="col">C</th>
+            <th scope="col">D</th>
+            <th scope="col">E</th>
+          </tr>
+          <tr>
+            <td>2/2 이상의 공격이 통상패, 3/2 이상의 공격이 비장패에 존재</td>
+            <td>애매한데 쎄긴 함</td>
+            <td>평범한 수준</td>
+            <td>싸움에는 별로 재능이 없다</td>
+            <td>애초에 때릴 생각이 없다</td>
+          </tr>
+        </table>
+
+        <div class="stat">스피드</div>
+        <div class="stat-notes">
+          -공격패의 매수가 많은 것도 반영.<br />
+          -전진 뿐 아니라 후퇴를 잘 하는 것도 스피드가 빠른 것으로 취급.<br /><br />
+        </div>
+        <table border="1">
+          <tr>
+            <th scope="col">A</th>
+            <th scope="col">B</th>
+            <th scope="col">C</th>
+            <th scope="col">D</th>
+            <th scope="col">E</th>
+          </tr>
+          <tr>
+            <td>간격 조절에 능하고 공격패가 많다</td>
+            <td>레인지 락이 통하지 않는 정도</td>
+            <td>걸어 다닌다</td>
+            <td>기어 다닌다</td>
+            <td>히미카를 보자마자 서렌을 친다 (근접의 경우)</td>
+          </tr>
+        </table>
+
+        <div class="stat">지속력</div>
+        <table border="1">
+          <tr>
+            <th scope="col">A</th>
+            <th scope="col">B</th>
+            <th scope="col">C</th>
+            <th scope="col">D</th>
+            <th scope="col">E</th>
+          </tr>
+          <tr>
+            <td>드러눕는 것만은 자신이 있다</td>
+            <td>괜찮은 방어력이 있다</td>
+            <td>그럭저럭... 하면 하지</td>
+            <td>2순 끝쯤 부터는 손이 떨린다</td>
+            <td>금기 게이지가 있다</td>
+          </tr>
+        </table>
+
+        <div class="stat">정밀조작성</div>
+        <div class="stat-notes">
+          -기본적으로는 난이도의 개념. 하지만 랭크가 높을수록 상대의 자원을
+          빼앗거나 특수 승리 등 특이한 능력이 많다.<br /><br />
+        </div>
+        <table border="1">
+          <tr>
+            <th scope="col">A</th>
+            <th scope="col">B</th>
+            <th scope="col">C</th>
+            <th scope="col">D</th>
+            <th scope="col">E</th>
+          </tr>
+          <tr>
+            <td>핸드를 그냥 던지다보면 게임을 이긴다</td>
+            <td>적당히 던지면 된다</td>
+            <td>평범한 정도</td>
+            <td>상당히 정밀한 조작이 필요하다</td>
+            <td>뉴비들은 건들지 마시오</td>
+          </tr>
+        </table>
+
+        <div class="stat">사정거리</div>
+        <div class="stat-notes">
+          -사정거리 (여기에서는 주로 간격을 일컫는다.)<br /><br />
+        </div>
+        <table border="1">
+          <tr>
+            <th scope="col">A</th>
+            <th scope="col">B</th>
+            <th scope="col">C</th>
+            <th scope="col">D</th>
+            <th scope="col">E</th>
+          </tr>
+          <tr>
+            <td>여기 부터는 사실상 「거리」의 의미는 없다</td>
+            <td>6~10미터 정도의 원거리</td>
+            <td>4~6미터 정도의 중거리</td>
+            <td>2~4미터 정도의 근거리</td>
+            <td>0~2미터 정도의 클린치</td>
+          </tr>
+        </table>
+
+        <div class="stat">성장성</div>
+        <table border="1">
+          <tr>
+            <th scope="col">A</th>
+            <th scope="col">B</th>
+            <th scope="col">C</th>
+            <th scope="col">D</th>
+            <th scope="col">E</th>
+          </tr>
+          <tr>
+            <td>카드가 자주 바뀌거나, 어나더가 2종류 이상 있다</td>
+            <td>가끔 카드가 바뀔 때가 있다</td>
+            <td>이상한 추가패나 판떼기가 있다</td>
+            <td>평범하다</td>
+            <td>거의 바뀌지 않는다</td>
+          </tr>
+        </table>
+
+        <br /><br /><br /><br /><br />
+      </div>
     </div>
   </body>
 </html>
