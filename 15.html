@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>벚꽃 내리는 시대에 결투를 - 여신 소개</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;400;500;700;900&display=swap");
+      code Code * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Noto Serif KR", "Noto Serif JP", serif;
+        line-height: 1.8;
+        color: #3d2914;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 182, 193, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 192, 203, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(255, 160, 180, 0.05) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            135deg,
+            #faf0e6 0%,
+            #f5deb3 20%,
+            #deb887 40%,
+            #d2b48c 60%,
+            #bc9a6a 80%,
+            #8b7355 100%
+          );
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* 벚꽃 애니메이션 */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background-image: radial-gradient(
+            2px 2px at 20px 30px,
+            rgba(255, 182, 193, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 40px 70px,
+            rgba(255, 192, 203, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 90px 40px,
+            rgba(255, 160, 180, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 130px 80px,
+            rgba(255, 182, 193, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 160px 30px,
+            rgba(255, 192, 203, 0.4),
+            transparent
+          );
+        background-repeat: repeat;
+        background-size: 200px 100px;
+        animation: sakura-fall 20s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes sakura-fall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      header {
+        background: linear-gradient(
+            rgba(139, 69, 19, 0.1),
+            rgba(139, 69, 19, 0.05)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wood" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="%23deb887"/><path d="M0,0 L4,4 M4,0 L0,4" stroke="%23cd853f" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23wood)"/></svg>');
+        border: 3px solid #8b4513;
+        border-radius: 0;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.2),
+          0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      header::before {
+        content: "🌸";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+
+      header::after {
+        content: "🌸";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #8b4513;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3),
+          1px 1px 2px rgba(139, 69, 19, 0.5);
+        margin-bottom: 10px;
+        font-family: "Noto Serif JP", serif;
+      }
+
+      h1 a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      h1 a:hover {
+        color: #a0522d;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #654321;
+        font-style: italic;
+        margin-top: 5px;
+      }
+
+      .navigation {
+        background: linear-gradient(
+            rgba(222, 184, 135, 0.9),
+            rgba(210, 180, 140, 0.9)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="20" height="20" fill="%23deb887"/><path d="M0 0h20v1H0zM0 19h20v1H0z" fill="%23cd853f"/></svg>');
+        border: 2px solid #8b4513;
+        border-radius: 0;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: inset 0 0 10px rgba(139, 69, 19, 0.1),
+          0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        list-style: none;
+      }
+
+      .nav-grid a {
+        display: block;
+        padding: 10px 12px;
+        background: linear-gradient(to bottom, #f4e4bc, #e6d3a7, #d4c195);
+        color: #654321;
+        text-decoration: none;
+        border: 1px solid #8b7355;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        position: relative;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-grid a:hover {
+        background: linear-gradient(to bottom, #f8e8c0, #ebd7ab, #d8c699);
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-grid a:active {
+        transform: translateY(1px);
+        box-shadow: inset 0 1px 3px rgba(139, 69, 19, 0.3),
+          0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-grid #prol {
+        background: linear-gradient(to bottom, #d4af37, #b8941f, #9d7e1a);
+        color: #4a3728;
+        font-weight: 700;
+        border: 1px solid #8b4513;
+      }
+
+      .main-content {
+        background: linear-gradient(
+            rgba(250, 240, 230, 0.95),
+            rgba(245, 222, 179, 0.95)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="1" height="1"><rect width="1" height="1" fill="%23faf0e6"/></pattern></defs><rect width="40" height="40" fill="url(%23paper)"/><path d="M0,20 Q20,15 40,20 T80,20" stroke="rgba(139,69,19,0.1)" stroke-width="0.5" fill="none"/></svg>');
+        border: 3px solid #8b4513;
+        border-radius: 0;
+        padding: 30px;
+        box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.1),
+          0 8px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .main-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 182, 193, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 192, 203, 0.1) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .goddess-card {
+        background: linear-gradient(
+            145deg,
+            rgba(255, 248, 240, 0.9),
+            rgba(250, 240, 230, 0.9)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><rect width="30" height="30" fill="%23fff8f0"/><circle cx="15" cy="15" r="1" fill="rgba(139,69,19,0.1)"/></svg>');
+        border: 2px solid #8b7355;
+        border-radius: 0;
+        padding: 25px;
+        margin-bottom: 35px;
+        box-shadow: inset 0 0 10px rgba(139, 69, 19, 0.05),
+          0 6px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .goddess-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #8b4513, #a0522d, #8b4513);
+        z-index: -1;
+        border-radius: 0;
+      }
+
+      .goddess-card:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 0 15px rgba(139, 69, 19, 0.08),
+          0 10px 25px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.3);
+      }
+
+      .goddess-header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+        padding-bottom: 15px;
+      }
+
+      .goddess-info h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #8b4513;
+        margin-bottom: 5px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        font-family: "Noto Serif JP", serif;
+      }
+
+      .goddess-info h3 {
+        font-size: 1.1rem;
+        color: #654321;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      .goddess-image {
+        border: 3px solid #8b4513;
+        border-radius: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2),
+          inset 0 0 10px rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+        background: rgba(255, 248, 240, 0.5);
+      }
+
+      .goddess-image:hover {
+        transform: scale(1.02);
+      }
+
+      .stats-container {
+        background: linear-gradient(
+            135deg,
+            rgba(222, 184, 135, 0.3),
+            rgba(210, 180, 140, 0.3)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="20" height="20" fill="rgba(222,184,135,0.1)"/><path d="M0 10h20M10 0v20" stroke="rgba(139,69,19,0.1)" stroke-width="0.5"/></svg>');
+        border: 1px solid #8b7355;
+        border-radius: 0;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      .stat-item {
+        background: linear-gradient(
+          to right,
+          rgba(255, 248, 240, 0.8),
+          rgba(250, 240, 230, 0.8)
+        );
+        padding: 12px 15px;
+        border: 1px solid rgba(139, 115, 85, 0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        font-size: 0.95rem;
+      }
+
+      .ability-section {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 228, 225, 0.8),
+            rgba(255, 218, 185, 0.8)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="flower" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,182,193,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="50" cy="50" r="40" fill="url(%23flower)"/></svg>');
+        border: 2px solid #cd853f;
+        border-radius: 0;
+        padding: 15px;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      .ability-section::before {
+        content: "⚔️";
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.2rem;
+        opacity: 0.6;
+      }
+
+      .ability-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #8b4513;
+        margin-bottom: 5px;
+        font-family: "Noto Serif JP", serif;
+      }
+
+      .ability-content {
+        font-size: 1rem;
+        color: #654321;
+        line-height: 1.6;
+      }
+
+      .description {
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: #3d2914;
+        background: linear-gradient(
+            rgba(255, 248, 240, 0.7),
+            rgba(250, 235, 215, 0.7)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><rect width="60" height="60" fill="rgba(250,235,215,0.3)"/><path d="M0,30 Q30,25 60,30 T120,30" stroke="rgba(139,69,19,0.1)" stroke-width="0.3" fill="none"/></svg>');
+        padding: 20px;
+        border: 1px solid rgba(139, 115, 85, 0.4);
+        border-left: 4px solid #8b4513;
+        margin-top: 15px;
+        box-shadow: inset 2px 0 4px rgba(139, 69, 19, 0.1);
+      }
+
+      /* 등급별 색상 */
+      .rank-s {
+        color: #dc143c;
+        font-weight: bold;
+        text-shadow: 0 0 3px rgba(220, 20, 60, 0.3);
+      }
+      .rank-a {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+      .rank-b {
+        color: #d4af37;
+        font-weight: bold;
+      }
+      .rank-c {
+        color: #cd853f;
+        font-weight: bold;
+      }
+      .rank-d {
+        color: #8b7355;
+        font-weight: bold;
+      }
+      .rank-e {
+        color: #696969;
+        font-weight: bold;
+      }
+
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .goddess-header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-grid {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 5px;
+        }
+
+        .nav-grid a {
+          padding: 8px 10px;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* 서서히 나타나는 애니메이션 */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .goddess-card {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .goddess-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .goddess-card:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      .goddess-card:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><a href="index.html">Furuyoni 여신 소개하다</a></h1>
+      </header>
+      code Code
+      <nav class="navigation">
+        <div class="nav-grid">
+          <a id="prol" href="0.html">0. </a>
+          <a href="1.html"> 유리나</a>
+          <a href="2.html"> 사이네</a>
+          <a href="3.html"> 히미카</a>
+          <a href="4.html"> 토코요</a>
+          <a href="5.html"> 오보로</a>
+          <a href="6.html"> 유키히</a>
+          <a href="7.html"> 신라</a>
+          <a href="8.html"> 하가네</a>
+          <a href="9.html"> 치카게</a>
+          <a href="10.html"> 쿠루루</a>
+          <a href="11.html"> 탈리야</a>
+          <a href="12.html"> 라이라</a>
+          <a href="13.html"> 우츠로</a>
+          <a href="14.html"> 호노카</a>
+          <a href="15.html"> 코르누</a>
+          <a href="16.html"> 야츠하</a>
+          <a href="17.html"> 하츠미</a>
+          <a href="18.html"> 미즈키</a>
+          <a href="19.html"> 메구미</a>
+          <a href="20.html"> 카나에</a>
+          <a href="21.html"> 카무이</a>
+          <a href="22.html"> 렌리</a>
+          <a href="23.html"> 아키나</a>
+          <a href="24.html"> 시스이</a>
+          <a href="25.html"> 미소라</a>
+          <a href="26.html"> 이니르</a>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <div class="goddess-card">
+          <div class="goddess-header">
+            <img
+              src="furu-img/kornu.png"
+              alt="코르누"
+              width="110"
+              height="130"
+              class="goddess-image"
+            />
+            <div class="goddess-info">
+              <h2>코르누</h2>
+              <h3>상징무기: 썰매</h3>
+            </div>
+          </div>
+
+          <div class="stats-container">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span>파괴력</span>
+                <span class="rank-c">C</span>
+              </div>
+              <div class="stat-item">
+                <span>스피드</span>
+                <span class="rank-c">C</span>
+              </div>
+              <div class="stat-item">
+                <span>지속력</span>
+                <span class="rank-b">B</span>
+              </div>
+              <div class="stat-item">
+                <span>정밀조작성</span>
+                <span class="rank-b">C</span>
+              </div>
+              <div class="stat-item">
+                <span>사정거리</span>
+                <span class="rank-c">C</span>
+              </div>
+              <div class="stat-item">
+                <span>성장성</span>
+                <span class="rank-d">D</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ability-section">
+            <div class="ability-title">능력 : 동결</div>
+            <div class="ability-content">
+              내용 : 동결 당하면 빈 오라에 동결 토큰을 둔다. <br /><br />
+              동결당한 칸은 오라로 취급하지 않으며 단지 자리만 차지한다.<br />
+              이때부터는 '품기'가 '동결 토큰을 되돌린다'로 변한다.
+            </div>
+          </div>
+
+          <div class="description">
+            중거리 서포터형 여신.<br /><br />
+            상대방의 행동을 억제하는 컨트롤 계이기도 하다.<br /><br />
+            오라를 하나 둘 빼앗고 동결 하면 상대는 움직일 수 조차도 없게 되어
+            죽는 무시무시한 녀석. 그나마 대책은 라이프로 맞고 빠르게 끝을 내는
+            것, 우파스 툼 의 재기 조건을 채워주지 않는 것 등이 있지만 인생은
+            실전이기에 쉽지 않다. 특히 서리 가시덤불 - 우파스 툼 - 검의 춤 으로
+            4/3 공격을 날리는 콤보는 유명하다. 절대영도의 전력화는 공격 거리가
+            아니더라도 동결은 진행 하기에 선공에서 인사로 사용하기 좋다는 것도
+            팁.
+            <br /><br />
+            탈코라고 원성의 목소리가 높지만 숏컷으로 저정도면 엄청 이쁜게
+            맞다니까.
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

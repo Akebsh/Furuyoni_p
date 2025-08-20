@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>벚꽃 내리는 시대에 결투를 - 여신 소개</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;400;500;700;900&display=swap");
+      code Code * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Noto Serif KR", "Noto Serif JP", serif;
+        line-height: 1.8;
+        color: #3d2914;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 182, 193, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 192, 203, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 40%,
+            rgba(255, 160, 180, 0.05) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            135deg,
+            #faf0e6 0%,
+            #f5deb3 20%,
+            #deb887 40%,
+            #d2b48c 60%,
+            #bc9a6a 80%,
+            #8b7355 100%
+          );
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* 벚꽃 애니메이션 */
+      body::before {
+        content: "";
+        position: fixed;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background-image: radial-gradient(
+            2px 2px at 20px 30px,
+            rgba(255, 182, 193, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 40px 70px,
+            rgba(255, 192, 203, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 90px 40px,
+            rgba(255, 160, 180, 0.4),
+            transparent
+          ),
+          radial-gradient(
+            1px 1px at 130px 80px,
+            rgba(255, 182, 193, 0.3),
+            transparent
+          ),
+          radial-gradient(
+            2px 2px at 160px 30px,
+            rgba(255, 192, 203, 0.4),
+            transparent
+          );
+        background-repeat: repeat;
+        background-size: 200px 100px;
+        animation: sakura-fall 20s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes sakura-fall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      header {
+        background: linear-gradient(
+            rgba(139, 69, 19, 0.1),
+            rgba(139, 69, 19, 0.05)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wood" patternUnits="userSpaceOnUse" width="4" height="4"><rect width="4" height="4" fill="%23deb887"/><path d="M0,0 L4,4 M4,0 L0,4" stroke="%23cd853f" stroke-width="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23wood)"/></svg>');
+        border: 3px solid #8b4513;
+        border-radius: 0;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.2),
+          0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        position: relative;
+      }
+
+      header::before {
+        content: "🌸";
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+
+      header::after {
+        content: "🌸";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #8b4513;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3),
+          1px 1px 2px rgba(139, 69, 19, 0.5);
+        margin-bottom: 10px;
+        font-family: "Noto Serif JP", serif;
+      }
+
+      h1 a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      h1 a:hover {
+        color: #a0522d;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #654321;
+        font-style: italic;
+        margin-top: 5px;
+      }
+
+      .navigation {
+        background: linear-gradient(
+            rgba(222, 184, 135, 0.9),
+            rgba(210, 180, 140, 0.9)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="20" height="20" fill="%23deb887"/><path d="M0 0h20v1H0zM0 19h20v1H0z" fill="%23cd853f"/></svg>');
+        border: 2px solid #8b4513;
+        border-radius: 0;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: inset 0 0 10px rgba(139, 69, 19, 0.1),
+          0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        list-style: none;
+      }
+
+      .nav-grid a {
+        display: block;
+        padding: 10px 12px;
+        background: linear-gradient(to bottom, #f4e4bc, #e6d3a7, #d4c195);
+        color: #654321;
+        text-decoration: none;
+        border: 1px solid #8b7355;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        position: relative;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-grid a:hover {
+        background: linear-gradient(to bottom, #f8e8c0, #ebd7ab, #d8c699);
+        transform: translateY(-1px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-grid a:active {
+        transform: translateY(1px);
+        box-shadow: inset 0 1px 3px rgba(139, 69, 19, 0.3),
+          0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-grid #prol {
+        background: linear-gradient(to bottom, #d4af37, #b8941f, #9d7e1a);
+        color: #4a3728;
+        font-weight: 700;
+        border: 1px solid #8b4513;
+      }
+
+      .main-content {
+        background: linear-gradient(
+            rgba(250, 240, 230, 0.95),
+            rgba(245, 222, 179, 0.95)
+          ),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="1" height="1"><rect width="1" height="1" fill="%23faf0e6"/></pattern></defs><rect width="40" height="40" fill="url(%23paper)"/><path d="M0,20 Q20,15 40,20 T80,20" stroke="rgba(139,69,19,0.1)" stroke-width="0.5" fill="none"/></svg>');
+        border: 3px solid #8b4513;
+        border-radius: 0;
+        padding: 30px;
+        box-shadow: inset 0 0 20px rgba(139, 69, 19, 0.1),
+          0 8px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        text-align: center;
+      }
+
+      .main-content h2 {
+        font-size: 2.2rem;
+        color: #8b4513;
+        margin-bottom: 10px;
+      }
+      .main-content h3 {
+        font-size: 1.2rem;
+        color: #654321;
+        font-style: italic;
+        margin-bottom: 25px;
+        font-weight: 400;
+      }
+
+      .main-image {
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        border: 3px solid #8b4513;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin: 20px auto;
+        border: 3px solid #8b4513;
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .ad-line {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(139, 69, 19, 0.2);
+        font-style: italic;
+        color: #8b7355;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .nav-grid {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 5px;
+        }
+
+        .nav-grid a {
+          padding: 8px 10px;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><a href="index.html">Furuyoni 여신 소개하다</a></h1>
+      </header>
+      code Code
+      <nav class="navigation">
+        <div class="nav-grid">
+          <a id="prol" href="0.html">서문 </a>
+          <a href="1.html"> 유리나</a>
+          <a href="2.html"> 사이네</a>
+          <a href="3.html"> 히미카</a>
+          <a href="4.html"> 토코요</a>
+          <a href="5.html"> 오보로</a>
+          <a href="6.html"> 유키히</a>
+          <a href="7.html"> 신라</a>
+          <a href="8.html"> 하가네</a>
+          <a href="9.html"> 치카게</a>
+          <a href="10.html"> 쿠루루</a>
+          <a href="11.html"> 탈리야</a>
+          <a href="12.html"> 라이라</a>
+          <a href="13.html"> 우츠로</a>
+          <a href="14.html"> 호노카</a>
+          <a href="15.html"> 코르누</a>
+          <a href="16.html"> 야츠하</a>
+          <a href="17.html"> 하츠미</a>
+          <a href="18.html"> 미즈키</a>
+          <a href="19.html"> 메구미</a>
+          <a href="20.html"> 카나에</a>
+          <a href="21.html"> 카무이</a>
+          <a href="22.html"> 렌리</a>
+          <a href="23.html"> 아키나</a>
+          <a href="24.html"> 시스이</a>
+          <a href="25.html"> 미소라</a>
+          <a href="26.html"> 이니르</a>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <h2>
+          <strong>보드 게임 '벚꽃 내리는 시대에 결투를'</strong><br />(일명
+          후루요니)
+        </h2>
+        <h3>
+          그에 입문한 뉴비들을 위해 여신들에 대한 간단한 소개를 하는, 대충 그런
+          느낌의 페이지.
+        </h3>
+        <p>틀린 정보가 있다면 의견을 보내 주세요.</p>
+        <img src="furu-img/mainf.jpg" class="main-image" />
+        <p>
+          <br /><br />BGM - 「壱雫空」<br />
+          <small>(BGM은 이 게임과는 아무런 관계도 없습니다)</small>
+          <br /><br />
+          Tip - 애니메이션 「Bang dream - Mygo!!!!!」 를 보는데에 있어<br />
+          전작은 전혀 몰라도 관계 없다고 한다. <br /><br />
+        </p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/_CraJ8654Bg?si=_fcQ9xtHG73NUBy8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="ad-line">(광고) bang dream mygo!!!!! 절찬 상영중</div>
+      </main>
+    </div>
+  </body>
+</html>
+```
